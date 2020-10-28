@@ -1,0 +1,23 @@
+name: lazycode
+version: 0.1.0
+
+authors:
+  - Andrei Zhigalkin <sanks64@protonmail.com>
+
+targets:
+  lazycode:
+    main: src/lazycode.cr
+
+dependencies:
+  tourmaline:
+    github: protoncr/tourmaline
+    branch: master
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: ~> 0.13.0
+
+crystal: 0.35.1
+
+license: ISC

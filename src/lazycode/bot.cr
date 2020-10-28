@@ -1,0 +1,65 @@
+require "tourmaline"
+
+require "./carcin"
+
+class LazyCode::Bot < Tourmaline::Client
+  @carcin = Carcin.new
+
+  @[Command("help")]
+  def help_command(ctx)
+    message = <<-MESSAGE
+    `Hello!`
+
+    This bot uses https://github.com/jhass/carc.in/ to run the code.
+
+    `Command syntax:`
+    /language version
+    code
+
+    `Example:`
+    /ruby 2.7.0
+    puts "Hello, world!"
+    MESSAGE
+
+    ctx.message.chat.send_message(message, parse_mode: :markdown)
+  end
+
+  private def run_code(ctx : Tourmaline::CommandHandler::Context, language : String)
+    version, _, code = ctx.text.partition("\n")
+
+    if code.empty?
+      message = "Invalid usage."
+    else
+      begin
+        response = @carcin.run_request(language, version, code)
+      rescue error : Errors::ServerError
+        message = <<-MESSAGE
+        Error!
+
+        ```
+        #{error}
+        ```
+        MESSAGE
+      else
+        message = "```\n#{response}\n```"
+      end
+    end
+
+    ctx.message.chat.send_message(message, parse_mode: :markdown)
+  end
+
+  @[Command("c")]
+  def c_command(ctx)
+    run_code(ctx, "c")
+  end
+
+  @[Command("crystal")]
+  def crystal_command(ctx)
+    run_code(ctx, "crystal")
+  end
+
+  @[Command("ruby")]
+  def ruby_command(ctx)
+    run_code(ctx, "ruby")
+  end
+end
