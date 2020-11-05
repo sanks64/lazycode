@@ -15,7 +15,8 @@ I made this because I'm too lazy to code from my phone using web interfaces.
 
 ## Contributing
 
-1. Make the changes.
-2. Add additional specs if needed.
-3. Format your code using `bin/ameba`.
-4. Create a new pull request.
+1. Make your changes.
+2. Add additional specs if needed, make sure they pass (`crystal spec`).
+3. Format the code (`crystal tool format`).
+4. Catch code issues (`bin/ameba`).
+5. Create a new pull request.
