@@ -48,9 +48,9 @@ class LazyCode::Bot < Tourmaline::Client
     ctx.message.chat.send_message(message, parse_mode: :markdown)
   end
 
-  @[Command("c")]
+  @[Command("gcc")]
   def c_command(ctx)
-    run_code(ctx, "c")
+    run_code(ctx, "gcc")
   end
 
   @[Command("crystal")]
