@@ -5,7 +5,7 @@ require "./carcin"
 class LazyCode::Bot < Tourmaline::Client
   @carcin = Carcin.new
 
-  @[Command("help")]
+  @[Command(["help", "start"])]
   def help_command(ctx)
     message = <<-MESSAGE
     Hello! This bot runs code using [carc.in](https://github.com/jhass/carc.in/).
