@@ -2,11 +2,15 @@ version: 2.0
 shards:
   ameba:
     git: https://github.com/crystal-ameba/ameba.git
-    version: 0.13.2
+    version: 0.13.4
+
+  async:
+    git: https://github.com/protoncr/async.git
+    version: 0.2.0+git.commit.c74d4b3198a7da3b4d7b9feddc382a20d6a5f72d
 
   http_proxy:
     git: https://github.com/mamantoha/http_proxy.git
-    version: 0.7.1+git.commit.c2869618ba2a620c8d9aefd237a7a580f4c1c664
+    version: 0.8.0+git.commit.affc16af1c21350daf5da865dd212b1ee7b2e9c2
 
   pool:
     git: https://github.com/watzon/pool.git
@@ -14,5 +18,5 @@ shards:
 
   tourmaline:
     git: https://github.com/protoncr/tourmaline.git
-    version: 0.20.0+git.commit.13a2b17ce383ebf97f085014026ba94c7aa276a5
+    version: 0.21.0+git.commit.0f575f0cf51b7bd57de60a03faaa986f1e42197d
 
