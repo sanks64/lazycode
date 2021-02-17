@@ -8,17 +8,15 @@ class LazyCode::Bot < Tourmaline::Client
   @[Command("help")]
   def help_command(ctx)
     message = <<-MESSAGE
-    `Hello!`
+    Hello! This bot runs code using [carc.in](https://github.com/jhass/carc.in/).
 
-    This bot uses https://github.com/jhass/carc.in/ to run the code.
+    Command syntax:
+    `/language version`
+    `code`
 
-    `Command syntax:`
-    /language version
-    code
-
-    `Example:`
-    /ruby 2.7.0
-    puts "Hello, world!"
+    Example:
+    `/ruby 2.7.0`
+    `puts "Hello, world!"`
     MESSAGE
 
     ctx.message.chat.send_message(message, parse_mode: :markdown)
