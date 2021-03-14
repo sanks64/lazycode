@@ -7,8 +7,8 @@ describe LazyCode::Carcin do
   end
 
   it "returns stderr" do
-      .lines.first.includes?("DivisionByZeroError").should be_true
     LazyCode::Carcin.new.run_request("crystal", "0.36.1", "1//0")
+      .includes?("DivisionByZeroError").should be_true
   end
 
   it "raises on server errors" do
