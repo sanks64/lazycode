@@ -1,7 +1,7 @@
 require "../spec_helper"
 
 describe LazyCode::Carcin do
-  it "returns sdtout" do
+  it "returns stdout" do
     LazyCode::Carcin.new.run_request("crystal", "0.35.0", %(puts "Hello, world!"))
       .should eq "Hello, world!\n"
   end
