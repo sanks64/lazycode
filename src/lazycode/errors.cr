@@ -1,4 +1,4 @@
 module LazyCode::Errors
-  class ServerError < Exception
+  class RequestError < Exception
   end
 end

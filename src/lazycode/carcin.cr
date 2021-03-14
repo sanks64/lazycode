@@ -37,7 +37,7 @@ class LazyCode::Carcin
       end
     else
       response_content = Models::FailedResponse.from_json(response.body).error.message
-      raise Errors::ServerError.new(response_content)
+      raise Errors::RequestError.new(response_content)
     end
   end
 end

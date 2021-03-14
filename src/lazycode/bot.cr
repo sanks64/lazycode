@@ -30,7 +30,7 @@ class LazyCode::Bot < Tourmaline::Client
     else
       begin
         response = @carcin.run_request(language, version, code)
-      rescue error : Errors::ServerError
+      rescue error : Errors::RequestError
         message = <<-MESSAGE
         Error!
 
